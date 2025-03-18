@@ -1,54 +1,64 @@
-# React + TypeScript + Vite
+# 🚀 React OCR ID Integration Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates a clean and modern implementation of OCR (Optical Character Recognition) functionality using the fw-ocrid library in a React application with TypeScript. It also supports optional integration with a Regula License for extended functionality.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🎯 Key Features
 
-## Expanding the ESLint configuration
+ - Real-time OCR scanning of identification documents via webcam.
+ - Easy-to-use React component architecture.
+ - Optional use of a Regula License to enhance OCR features.
+ - Modern, responsive UI with modular CSS styling.
+ - Provides clear user feedback during the OCR scanning process.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# 🖥️ Tech Stack
+
+ - React (with TypeScript)
+ - Vite (for rapid development and build)
+ - CSS Modules (for scoped styling)
+ - fw-ocrid Library (OCR processing engine)
+
+# ⚙️ Installation
+
+Follow these steps to set up the project locally:
+
+1. Clone this repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+
+cd YOUR_REPOSITORY
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
+```bash
+npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# or
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+yarn install
 ```
+
+# ▶️ How to Run the App
+
+To start the development server:
+```bash
+npm run dev
+
+# or
+
+yarn dev
+```
+
+Open http://localhost:PORT in your browser to view the running app.
+
+
+# 🛠️ How to Use the OCR Component
+
+ - Enter your fw-ocrid API key (required).
+ - Optionally enter your Regula license if you have one.
+ - Click "START OCR".
+ - Position your identification document clearly in the webcam's frame.
+ - Follow on-screen instructions until the scan completes.
+
+
