@@ -4,7 +4,6 @@ import './App.css';
 
 const App: React.FC = () => (
   <div>
-    <h1>OCR Integration Example</h1>
     <OcrComponent />
   </div>
 );
