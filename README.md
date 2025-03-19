@@ -7,7 +7,7 @@ This project demonstrates a clean and modern implementation of OCR (Optical Char
 
  - Real-time OCR scanning of identification documents via webcam.
  - Easy-to-use React component architecture.
- - Use of a Regula License to enhance OCR features.
+ - Use of a Package License to enhance OCR features.
  - Modern, responsive UI with modular CSS styling.
  - Provides clear user feedback during the OCR scanning process.
 
@@ -56,7 +56,7 @@ Open http://localhost:PORT in your browser to view the running app.
 # 🛠️ How to Use the OCR Component
 
  - Enter your fw-ocrid API key.
- - Regula license is requiered for developement and testing. 
+ - Package license is requiered for developement and testing. 
  - Click "START OCR".
  - Position your identification document clearly in the webcam's frame.
  - Follow on-screen instructions until the scan completes.
