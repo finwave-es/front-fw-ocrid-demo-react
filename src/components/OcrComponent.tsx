@@ -23,7 +23,7 @@ const OcrComponent: React.FC = () => {
       setStatus('Regula license applied (license property).');
     } else {
       delete window.regulaLicense;
-      setStatus('No regula license. Using default or none.');
+      setStatus('Regula license is only for development and testing purposes in local environtments.');
     }
   }, [regulaLicense]);
 
@@ -96,7 +96,7 @@ const OcrComponent: React.FC = () => {
       />
       <input
         type="text"
-        placeholder="Regula license (Optional)"
+        placeholder="Regula license (Required for local env)*"
         className={styles.input}
         value={regulaLicense}
         onChange={(e) => setRegulaLicense(e.target.value)}
