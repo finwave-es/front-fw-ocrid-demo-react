@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { OcrId, Envs, EventType, EventTypeUserFeedback } from 'fw-ocrid'
+import { OcrId, Envs, EventType, EventTypeUserFeedback, Endpoints } from 'fw-ocrid'
 import styles from './OcrComponent.module.css'
 
 declare global {
@@ -53,8 +53,35 @@ const OcrComponent: React.FC = () => {
       }
     });
 
-    ocrid.events(EventType.RESULT).subscribe((result) => {
-      setStatus(`Scan completed: ${JSON.stringify(result)}`);
+    ocrid.events(EventType.RESULT).subscribe(() => {
+      setStatus(`Scan completed`);
+
+      if ((ocrid as any).id) {
+        fetch(`${Endpoints[env]}/result/${(ocrid as any).id}`)
+          .then(response => {
+            console.log('Response status:', response.status);
+            if (response.ok) {
+              const contentType = response.headers.get('content-type');
+              if (contentType && contentType.includes('application/json')) {
+                return response.json();
+              } else {
+                return response.text().then(text => {
+                  console.log('Raw response:', text);
+                  return { rawText: text };
+                });
+              }
+            } else {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+          })
+          .then(data => {
+            console.log('Backend response:', data);
+          })
+          .catch(error => {
+            console.error('Error fetching results:', error);
+          });
+      }
+
       ocrid.close(); 
     });
 
